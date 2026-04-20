@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-md-background text-md-onBackground font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply relative overflow-hidden inline-flex items-center justify-center rounded-full bg-md-primary text-md-onPrimary font-medium transition-all duration-300 ease-md-emphasized active:scale-95;
+    padding: 0.5rem 1.5rem;
+    height: 2.5rem; /* h-10 */
+  }
+  .btn-primary:hover::after {
+    content: '';
+    @apply absolute inset-0 bg-white/10 pointer-events-none;
+  }
+  .btn-secondary {
+    @apply relative overflow-hidden inline-flex items-center justify-center rounded-full bg-md-secondary text-md-onSecondary font-medium transition-all duration-300 ease-md-emphasized active:scale-95;
+    padding: 0.5rem 1.5rem;
+    height: 2.5rem;
+  }
+  .btn-secondary:hover::after {
+    content: '';
+    @apply absolute inset-0 bg-md-onSecondary/10 pointer-events-none;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-md-surfaceContainer rounded-[24px] p-6 shadow-sm transition-all duration-300 ease-md-emphasized hover:shadow-md;
+  }
+
+  /* Inputs */
+  .input-filled {
+    @apply bg-md-surfaceContainerLow rounded-t-lg border-b-2 border-md-outline px-4 h-14 w-full outline-none transition-colors duration-200 focus:border-md-primary;
+  }
+}
